@@ -1,5 +1,5 @@
 var protocol = require('bcoin-protocol')
-var tx = require('bcoin-tx')
+var bTx = require('bcoin-tx')
 var utils = require('bcoin-utils')
 
 function Block(network, data, subtype) {
@@ -30,7 +30,7 @@ function Block(network, data, subtype) {
         var self = this;
         this.txs = data.txs || [];
         this.txs = this.txs.map(function(t) {
-            t = tx(network, t, self);
+            t = bTx(network, t, self);
             t.block = self.hash('hex');
             t.ts = t.ts || self.ts;
             return t;

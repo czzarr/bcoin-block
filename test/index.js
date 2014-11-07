@@ -2,6 +2,7 @@ var assert = require('assert');
 var Block = require('../')
 var protocol = require('bcoin-protocol')
 var utils = require('bcoin-utils')
+var testBlock = require('./block.json')
 
 describe('Block', function() {
   var parser = protocol.parser();
@@ -57,5 +58,15 @@ describe('Block', function() {
     var b = Block('mainnet', Block.fromJSON('mainnet', json), json.subtype);
     assert.equal(utils.toHex(b.render()), json.block);
     assert(b.verify());
+  });
+
+  it('should parse txs', function() {
+    var block = Block('testnet3', testBlock, 'block');
+    assert.equal(block.txs.length, 1)
+    assert.equal(block.txs[0].type, 'tx')
+    assert.equal(
+      block.tx[0],
+      '550ad9062152ae7a44030f23024a67e16d223fcf2fdaeb0f699da12e6fdca386'
+    )
   });
 });
