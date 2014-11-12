@@ -1,6 +1,6 @@
 {
   "name": "bcoin-block",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Bitcoin block object",
   "main": "index.js",
   "scripts": {
