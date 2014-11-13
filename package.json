@@ -1,6 +1,6 @@
 {
   "name": "bcoin-block",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Bitcoin block object",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "bcoin-protocol": "^1.4.0",
-    "bcoin-tx": "^1.4.0",
+    "bcoin-tx": "^1.5.0",
     "bcoin-utils": "^1.1.0"
   }
 }
